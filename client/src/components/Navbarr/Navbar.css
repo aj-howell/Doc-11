@@ -26,18 +26,18 @@ ul li{
 
 
 .search-box {
-    position: relative;
-    
+
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  padding-right: 35px;
+  
   }
   
-  .search-icon {
-    margin-right: 35px;
-    cursor: pointer;
-  }
-  
-  .input-box {
+
+.input-box {
     display: none;
-    padding: 6px;
+    padding-right: 35px;
     position: absolute;
     top: 100%;
     right: 100%;
