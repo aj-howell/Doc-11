@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
+const db = require('../models/database'); // db starts with the server
 
 /**
  * Get port from environment and store in Express.
