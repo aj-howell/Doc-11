@@ -2,7 +2,7 @@ require('dotenv').config({path:'../.env'});
 const uri = process.env.DB_URI;
 
 const db = require('mongoose'); 
-//"mongodb+srv://Doc11:RD4LrYfBVyl7l5ij@docdb.o1oipv1.mongodb.net/DocDB?retryWrites=true&w=majority"
+
 //connecting to the database
 db.connect(uri)
 .then((res)=>
