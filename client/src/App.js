@@ -1,17 +1,19 @@
 import './App.css';
-
-import { useApi } from './hooks/use-api';
+import Table from './components/Table';
 
 function App() {
-  const { response } = useApi();
+  const response = "Welcome to the COVID-19 Chest X-Ray Image Analysis Tool!";
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          {response}
+      <header className="App-header">        
+          <div>
+            {response}  
+          </div>
 
-        </p>
+          <div> 
+              <Table />
+          </div>
       </header>
     </div>
   );
