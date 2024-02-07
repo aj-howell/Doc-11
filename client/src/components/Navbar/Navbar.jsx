@@ -14,10 +14,7 @@ const Navbar = () => {
       if (!isSearchVisible){
 
         setIsSearchVisible(true)
-        
-        
-        
-        
+
       }
   
       if (isSearchVisible) {
@@ -28,12 +25,6 @@ const Navbar = () => {
       }
 
     };
-  
-   
-
-
-
-
 
   return (
     <div className='navbar'>
@@ -41,10 +32,8 @@ const Navbar = () => {
         <img src='logohere' alt='' className='logo'/>
 
         <ul>
-            <li>Home</li>
             <li>AdminLogin</li>
             <li>About</li>
-
         </ul>
 
         <div className='search-box'

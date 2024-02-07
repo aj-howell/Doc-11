@@ -3,6 +3,7 @@ import "ag-grid-community/styles/ag-theme-alpine.css"; // Theme
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Theme
 import { AgGridReact } from 'ag-grid-react'; // React Grid Logic
 import React, { useEffect, useState } from 'react';
+import { getPatients } from "../../services/PatientService";
     
 const Table = () => {
 
@@ -12,32 +13,38 @@ const Table = () => {
     const [data, setData] = useState([]); 
     const [quickFilterText, setQuickFilterText] = useState('');
 
-    
-    const getRowData = async () => {
-        try {
-            const response = await fetch('https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams');
-            const data = await response.json();
-            setData(data.exams);
-            //console.log(data.exams);
-        } catch (error) {
-            console.error(error);
-        }
+    const getRows = async ()=>
+    {
+        await getPatients()
+        .then((res)=>
+        {
+            console.log(res.data);
+            setData(res.data);
+        })
+        .catch((err)=>
+        {
+            console.log(err);// TODO: err handlers
+        })
     };
 
     useEffect(() => {
-        getRowData();
+        getRows();
     }, []);
 
+    /* { headerName: "Key Findings", field: "keyFindings", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true }, is this needed?
+    { headerName: "Brixia Scores", field: "brixiaScores", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },*/
     const columns = [
-        { headerName: 'Patient ID', field: '_id', sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Exam ID", field: "examId", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: 'Patient ID', field: 'patient_id', sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Exam ID", field: " exam_type_id", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Age", field: "age", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Sex", field: "sex", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Image", field: "imageURL", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Key Findings", field: "keyFindings", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Image", field: "png_filename", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Weight", field: "weight", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "BMI", field: "bmi", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Brixia Scores", field: "brixiaScores", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Zip Code", field: "zipCode", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true }
+        { headerName: "Zip Code", field: "zip", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Mortality", field: "mortality", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Icu Admits", field: "icu_admits", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Icu Admit", field: "icu_admit", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
     ];
     return (
       <>
