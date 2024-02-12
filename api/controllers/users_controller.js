@@ -1,4 +1,4 @@
-const User = require('../models/users');
+const User = require('../models/users').userModel;
 
 // const getUser = async (req, res) => {
 //     return res.status(200).json({
@@ -15,7 +15,8 @@ exports.createUser = async (req, res) => {
     const { username, email, password } = req.body;
     const newUser = new User({ username, email, password});
     const savedUser = await newUser.save();
-    res.json(savedUser);
+    res.send(savedUser);
+    //console.log(savedUser);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
