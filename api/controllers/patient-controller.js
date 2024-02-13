@@ -1,6 +1,5 @@
 const patientModel = require('../models/patient').patientModel;
 const { v4: uuidv4 } = require('uuid');
-const mongoose = require('mongoose');
 /*
 const getPatient = async (req, res) => {
   return res.status(200).json({
