@@ -1,4 +1,4 @@
-require('dotenv').config({path:'../.env'});
+require('dotenv').config()
 const uri = process.env.DB_URI;
 
 const db = require('mongoose'); 

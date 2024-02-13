@@ -50,7 +50,7 @@ const patientSchema = new Schema(
     }
 });
 
-const patientModel=model('Patient-Exams',patientSchema); // let the mongoose create the collection
+const patientModel=model('Patient-Exams', patientSchema); // let the mongoose create the collection
 
 module.exports=
 { 

@@ -4,11 +4,9 @@ import "ag-grid-community/styles/ag-theme-quartz.css"; // Theme
 import { AgGridReact } from 'ag-grid-react'; // React Grid Logic
 import React, { useEffect, useState } from 'react';
 import { getPatients } from "../../services/PatientService";
+import './Table.css';
     
 const Table = () => {
-
-
-    // const hi = 'hi';
 
     const [data, setData] = useState([]); 
     const [quickFilterText, setQuickFilterText] = useState('');
@@ -35,7 +33,7 @@ const Table = () => {
     { headerName: "Brixia Scores", field: "brixiaScores", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },*/
     const columns = [
         { headerName: 'Patient ID', field: 'patient_id', sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Exam ID", field: " exam_type_id", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
+        { headerName: "Exam ID", field: "exam_type_id", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Age", field: "age", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Sex", field: "sex", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Image", field: "png_filename", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
@@ -65,12 +63,9 @@ const Table = () => {
                 columnDefs={columns}
                 quickFilterText={quickFilterText}
                 pagination={true}>
-                
             </AgGridReact>
         </div>
-
     </>
-        
     );
 };
 

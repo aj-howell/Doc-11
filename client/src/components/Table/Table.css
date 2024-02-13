@@ -1,0 +1,50 @@
+/* Container for the search filter and table */
+.search-filter-div {
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 20px; /* Adds space between the search bar and the table */
+    font-size: 18px;
+  }
+  
+  /* Style adjustments for the search input */
+  .search-filter {
+    margin-right: auto; /* Pushes the search bar to the left */
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px; /* Ensures the search bar is not too small */
+    margin-left: 5px;
+  }
+  
+  /* Enhances the overall appearance of the table container */
+  .ag-theme-alpine {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  .ag-header-cell-label {
+    font-weight: bold; /* Makes column headers bold */
+  }
+  
+  /* Customizes the look of the table rows */
+  .ag-row {
+    transition: background-color 0.2s ease;
+  }
+  
+  .ag-row:hover {
+    background-color: #f5f5f5; /* Adds a hover effect to rows */
+  }
+  
+  /* Customizes pagination panel for better visibility */
+  .ag-paging-panel {
+    background-color: #f9f9f9;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  /* Adjusts the pagination button appearance */
+  .ag-paging-button, .ag-paging-page-summary-panel {
+    color: #495057;
+    font-weight: bold;
+  }
+  
