@@ -16,6 +16,24 @@
   margin-right: 20px;
 }
 
+.navbar {
+  background-color: #2a2d34; /* Dark background */
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Or 'fixed' to keep it at the top on scroll */
+  top: 0;
+  width: 100%;
+  
+}
+
+.navbar h1 {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
 ul {
   list-style: none;
   display: flex;
@@ -26,6 +44,19 @@ li {
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 50px;}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  text-decoration: underline;
+}
 li:hover {
   text-decoration: underline;
 }

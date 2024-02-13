@@ -1,6 +1,5 @@
 /* Container for the search filter and table */
 .search-filter-div {
-    display: flex;
     align-items: center;
     margin-bottom: 20px; /* Adds space between the search bar and the table */
     font-size: 18px;

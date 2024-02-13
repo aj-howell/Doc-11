@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import './Navbar.css';
 
 const Navbar = () => {
@@ -14,10 +15,7 @@ const Navbar = () => {
       if (!isSearchVisible){
 
         setIsSearchVisible(true)
-        
-        
-        
-        
+
       }
   
       if (isSearchVisible) {
@@ -28,11 +26,10 @@ const Navbar = () => {
       }
 
     };
-  
-   
 
 
-
+//TODO: Creating a Guard / Some sort of interceptor for what to do after login in 
+ const navigate = useNavigate();
 
 
   return (
@@ -42,9 +39,8 @@ const Navbar = () => {
 
         <ul>
             <li>Home</li>
-            <li>AdminLogin</li>
+            <li onClick={()=>{navigate('/login')}}>AdminLogin</li>
             <li>About</li>
-
         </ul>
 
         <div className='search-box'
@@ -57,7 +53,7 @@ const Navbar = () => {
             onClick={toggleSearch}
             style={{ cursor: 'pointer' }}>
 
-            <svg xmlns="http://www.w3.org/2000/svg" 
+            {/* <svg xmlns="http://www.w3.org/2000/svg" 
             width="20" 
             height="20" 
             fill="currentColor" 
@@ -65,7 +61,8 @@ const Navbar = () => {
             viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
             </svg>
-            
+             */}
+             
           </div>
           {isSearchVisible && (
           <div className='input-box'>
