@@ -36,3 +36,20 @@
   margin-bottom: 20px; /* Adds space below the title */
   padding: 10px; /* Optional: adds padding for better spacing */
 }
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+.title {
+  
+  font-size: 25px; /* Adjust size as needed for emphasis */
+  font-weight: bold; /* Makes the title stand out */
+  line-height: 1.5; /* Improves readability */
+  color: #2c3e50; /* Professional, subdued color */
+  text-align: center; /* Centers the title for emphasis */
+  margin-top: 20px; /* Adds space above the title */
+  margin-bottom: 20px; /* Adds space below the title */
+  padding: 10px; /* Optional: adds padding for better spacing */
+}
