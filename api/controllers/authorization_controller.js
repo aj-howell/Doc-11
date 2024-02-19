@@ -7,7 +7,7 @@ const login = async(req,res)=>
     userToken = {email: req.body.email, password: req.body.password}
 
     try {
-        const id = await auth(req.body.email);
+        const id = await auth(req.body.email, req.body.password);
         
         if(id==-1)
         {
@@ -19,7 +19,7 @@ const login = async(req,res)=>
             const token = jwt.sign({email: req.body.email}, 'user', { expiresIn: '1h' }); // issue token
             const authResponse = {token:token, id:id} //creating the response
             
-            res.setHeader('Authorization', `Bearer ${token}`);
+            res.setHeader('Authorization', `Bearer ${token}`); //set the header so we can make the request later
             res.send(authResponse);
         }
 

@@ -1,10 +1,10 @@
 const User = require('../models/users').userModel;
 const jwt = require('jsonwebtoken');
 
-const grabId = async(email)=>
+const grabId = async(email, password)=>
 {
     try {
-        const user= await User.findOne({email:email});
+        const user= await User.findOne({email:email, password:password});
 
         if(user==null)
         {

@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/patients', patientRouter);
+
 //user routes
 app.use('/users', usersRouter);
 app.use('/login', authRouter);
