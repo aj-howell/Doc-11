@@ -3,6 +3,15 @@ const router = express.Router();
 
 const PatientController = require('../controllers/patient-controller');
 
+
+//HTTP Methods
+/*
+    CREATE -> Post
+    READ -> Get
+    UPDATE -> Put
+    DELETE -> Delete
+*/
+
 router.get('/', PatientController.getPatients);
 
 router.post("/", PatientController.createPatient);

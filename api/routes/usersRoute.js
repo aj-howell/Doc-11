@@ -13,7 +13,8 @@ const UserController = require('../controllers/users_controller');
 router.post('/', UserController.createUser);
 
 // GET /users/:id - Get user by ID
-router.get('/:id', UserController.getUserById);
+//router.get('/:id', UserController.getUserById); no need to get user directly
 
+ 
 module.exports = router;
 
