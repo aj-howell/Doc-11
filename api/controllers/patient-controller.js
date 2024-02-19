@@ -1,13 +1,6 @@
 const patientModel = require('../models/patient').patientModel;
 const { v4: uuidv4 } = require('uuid');
-/*
-const getPatient = async (req, res) => {
-  return res.status(200).json({
-    success: true,
-    message: 'API is working.'
-  });
-}
-*/
+
 
 const getPatient = async (req, res) => { 
   const id = req.params.patient_id;
@@ -119,9 +112,6 @@ const updatePatient = async (req, res) => {
   try {
 
     const filter = {patient_id: req.params.patient_id};
-    
-    
-    
   
     const updatedPatientData = req.body;
 

@@ -1,15 +1,6 @@
 const User = require('../models/users').userModel;
 
-// const getUser = async (req, res) => {
-//     return res.status(200).json({
-//       success: true,
-//       message: 'API is working.'
-//     });
-//   }
-  
-//   module.exports = {
-//     getUser,
-//   };
+
 exports.createUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
