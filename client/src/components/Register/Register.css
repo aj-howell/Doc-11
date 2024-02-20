@@ -1,52 +1,77 @@
-body {
-    background-color: #d9d9d9;
-}
-p {
-    font-family: Georgia;
-}
-.form-register {
+/* Overall Page Styles */
+h1 {
     text-align: center;
-}    
-.p-firstname{
-    position: relative;
-    right: 32px;
-    margin: 8px;
+    color: #333;
 }
-.p-lastname{
-    position: relative;
-    right: 33px;
-    margin: 8px;
+
+.form-register {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.p-email{
-    position: relative;
-    right: 51px;
-    margin: 8px;
-}   
-.p-username{
-    position: relative;
-    right: 35px;
-    margin: 8px;
-}   
-.p-password{
-    position: relative;
-    right: 37px;
-    margin: 8px;
+
+.form-register h2 {
+    margin-bottom: 20px;
+    color: #333;
 }
-.p-verify{
-    position: relative;
-    right: 4px;
-    margin: 8px;
+
+/* Input field and label styling */
+.input-firstname,
+.input-lastname,
+.input-email,
+.input-username,
+.input-password,
+.verify-password {
+    margin-bottom: 15px;
 }
-.text {
-    margin-bottom: 0;
-    color: green;
-    font-family: Georgia;
+
+.form-register p {
+    margin: 0;
+    margin-bottom: 5px;
+    color: #555;
 }
-.box{
-    position: absolute;
-    right: 100px;
-    left: 50%;
-    width: 350px;
-    height: 450px;
-    border: 3px solid black;
+
+.form-register input[type="text"],
+.form-register input[type="password"] { /* Updated for password fields */
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
+
+/* Styling for the register link (assuming it should be a button) */
+.form-register a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.form-register a:hover {
+    background-color: #218838;
+}
+
+/* Styling for the already have an account link */
+.form-register div a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-register div a:hover {
+    text-decoration: underline;
+}
+

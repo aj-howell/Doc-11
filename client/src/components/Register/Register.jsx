@@ -1,39 +1,60 @@
+import React from 'react';
+import './Register.css';
+import { useNavigate } from "react-router-dom";
+import Auth from '../../services/AuthorizationService';
+import { useState } from "react";
 
 const Register= () => {
+    const navigate = useNavigate();
+
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');    
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        const userData = { username, email, password };
+
+        e.preventDefault()
+        const response = await Auth.register(username, email, password);
+        
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('id', response._id);
+        
+        //navigate to admin page
+        navigate('/');
+    }
+
+
     return(
         <>
         <h1>Register page</h1>
-        <form class="form-register">
-            <div class="box"></div>
+        <form className="form-register" onSubmit={handleSubmit}>
+            <div className="box"></div>
             <h2>Create an account:</h2>
-            <div class="input-firstname">
-                <p class="p-firstname">First Name:</p>
-                <input type="text" placeholder="First Name" required/>
+            
+            <div className="input-email">
+                <p className="p-email">Email:</p>
+                <input type="text" placeholder="Email" required
+                onChange={(e) => setEmail(e.target.value)}
+                    />
             </div>
-            <div class="input-lastname">
-                <p class="p-lastname">Last Name:</p>
-                <input type="text" placeholder="Last Name" required/>
+            <div className="input-username">
+                <p className="p-username">Username:</p>
+                <input type="text" placeholder="Username" required
+                onChange={(e) => setUsername(e.target.value)}/>
             </div>
-            <div class="input-email">
-                <p class="p-email">Email:</p>
-                <input type="text" placeholder="Email" required/>
+            <div className="input-password">
+                <p className="p-password">Password:</p>
+                <input type="password" placeholder="Password" required
+                onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <div class="input-username">
-                <p class="p-username">Username:</p>
-                <input type="text" placeholder="Username" required/>
-            </div>
-            <div class="input-password">
-                <p class="p-password">Password:</p>
-                <input type="text" placeholder="Password" required/>
-            </div>
-            <div class="verify-password">
-                <p class="p-verify">Re-enter Password:</p>
-                <input type="text" placeholder="Verify your Password" required/>
-            </div>
-            <a>Register!</a>
+            <button type="submit">Register!</button>
             <div>
+                {/* <button type="submit">Register</button>  fix this link reroute*/}
                 <a href="http://127.0.0.1:5500/client/public/login.html">Already have an account?</a>
             </div>
+            <button onClick={() => navigate(-1)} className="back-button">Go Back</button>
+
         </form>
         </>
     )

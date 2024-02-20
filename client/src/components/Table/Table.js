@@ -5,11 +5,15 @@ import { AgGridReact } from 'ag-grid-react'; // React Grid Logic
 import React, { useEffect, useState } from 'react';
 import { getPatients } from "../../services/PatientService";
 import './Table.css';
+import { useNavigate } from "react-router-dom";
+
     
 const Table = () => {
 
     const [data, setData] = useState([]); 
     const [quickFilterText, setQuickFilterText] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
+
 
     const getRows = async ()=>
     {
@@ -44,6 +48,14 @@ const Table = () => {
         { headerName: "Icu Admits", field: "icu_admits", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Icu Admit", field: "icu_admit", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
     ];
+
+    const onRowClicked = (row) => {
+        // Navigate to a different page, using row data to construct the path
+        // For example, navigating to /patient-detail/:id
+        //navigate(`/register`);
+        navigate(`/patient-detail/${row.data.patient_id}`);
+    };
+
     return (
       <>
         <div className='search-filter-div'>
@@ -62,7 +74,8 @@ const Table = () => {
                 rowData={data}
                 columnDefs={columns}
                 quickFilterText={quickFilterText}
-                pagination={true}>
+                pagination={true}
+                onRowClicked={onRowClicked}>
             </AgGridReact>
         </div>
     </>
