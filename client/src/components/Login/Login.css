@@ -1,0 +1,87 @@
+/* Overall Page Styles */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input field styling */
+.login-form input[type="text"],
+.login-form input[type="password"] { /* Adjusted for password input */
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Button styling */
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Checkbox and label styling */
+.login-form label {
+    display: block; /* Makes label take the full width */
+    margin: 0 0 20px 0;
+}
+
+.login-form label input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Forgot password and register link styling */
+.login-form div:last-child {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-form div:last-child button {
+    background: none;
+    color: #007bff;
+    padding: 0;
+    border: none;
+}
+
+/* Adjust forgot password text styling if needed */
+.back-button {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}

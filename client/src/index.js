@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import PatientDetail from './components/PatientDetail/PatientDetail';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register/>
+  },
+
+  {
+    path: "/patient-detail/:id",
+    element: <PatientDetail/>
   }
 ]);
 
