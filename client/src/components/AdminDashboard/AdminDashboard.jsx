@@ -1,3 +1,4 @@
+import PatientDrawer from "../Drawer/PatientDrawer";
 import Navbar from "../Navbar/Navbar";
 import Table from '../Table/Table';
 
@@ -13,7 +14,7 @@ const AdminDashboard=()=>
             </div>
             <div> 
                 <Table/>
-                <button>create</button>
+              <PatientDrawer buttonTitle='create'/>
             </div>
         </>
     );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getPatientById } from "../../services/PatientService"; // Assuming you have this service
+import PatientDrawer from '../Drawer/PatientDrawer';
 import './PatientDetail.css';
 
 const PatientDetail = () => {
@@ -53,7 +54,7 @@ const PatientDetail = () => {
                     <div className="detail-item"><strong>Mortality:</strong> {patientDetails.mortality ? 'Yes' : 'No'}</div>
                     <div className="detail-item"><strong>ICU Admits:</strong> {patientDetails.icu_admits}</div>
                     <div className="detail-item"><strong>ICU Admit:</strong> {patientDetails.icu_admit ? 'Yes' : 'No'}</div>
-                    <button>update</button>
+                   <PatientDrawer buttonTitle={'update'}/>
                     <button>delete</button>
                 </div>
             ) : (
