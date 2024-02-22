@@ -38,7 +38,7 @@ const Navbar = () => {
       <img src='logohere' alt='' className='logo'/>
 
       <ul>
-          <li>Home</li>
+          <li onClick={()=>{navigate('/')}}>Home</li>
           <li onClick={()=>{navigate('/login')}}>AdminLogin</li>
           <li onClick={()=>{navigate('/register')}}>Register</li>
 

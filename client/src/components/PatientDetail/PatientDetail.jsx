@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getPatientById } from "../../services/PatientService"; // Assuming you have this service
 import './PatientDetail.css';
 
@@ -53,6 +53,8 @@ const PatientDetail = () => {
                     <div className="detail-item"><strong>Mortality:</strong> {patientDetails.mortality ? 'Yes' : 'No'}</div>
                     <div className="detail-item"><strong>ICU Admits:</strong> {patientDetails.icu_admits}</div>
                     <div className="detail-item"><strong>ICU Admit:</strong> {patientDetails.icu_admit ? 'Yes' : 'No'}</div>
+                    <button>update</button>
+                    <button>delete</button>
                 </div>
             ) : (
                 <p>Loading patient details...</p>

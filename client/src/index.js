@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App';
+import AdminApp from './components/AdminDashboard/AdminApp';
 import Login from './components/Login/Login';
-import Register from './components/Register/Register';
 import PatientDetail from './components/PatientDetail/PatientDetail';
+import Register from './components/Register/Register';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/patient-detail/:id",
     element: <PatientDetail/>
+  },
+  {
+    path: "/Admin",
+    element: <AdminApp/>
   }
 ]);
 

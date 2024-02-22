@@ -3,9 +3,9 @@ import "ag-grid-community/styles/ag-theme-alpine.css"; // Theme
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Theme
 import { AgGridReact } from 'ag-grid-react'; // React Grid Logic
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { getPatients } from "../../services/PatientService";
 import './Table.css';
-import { useNavigate } from "react-router-dom";
 
     
 const Table = () => {

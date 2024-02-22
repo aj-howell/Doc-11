@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+.title {
+  
+  font-size: 25px; /* Adjust size as needed for emphasis */
+  font-weight: bold; /* Makes the title stand out */
+  line-height: 1.5; /* Improves readability */
+  color: #2c3e50; /* Professional, subdued color */
+  text-align: center; /* Centers the title for emphasis */
+  margin-top: 20px; /* Adds space above the title */
+  margin-bottom: 20px; /* Adds space below the title */
+  padding: 10px; /* Optional: adds padding for better spacing */
+}
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+.title {
+  
+  font-size: 25px; /* Adjust size as needed for emphasis */
+  font-weight: bold; /* Makes the title stand out */
+  line-height: 1.5; /* Improves readability */
+  color: #2c3e50; /* Professional, subdued color */
+  text-align: center; /* Centers the title for emphasis */
+  margin-top: 20px; /* Adds space above the title */
+  margin-bottom: 20px; /* Adds space below the title */
+  padding: 10px; /* Optional: adds padding for better spacing */
+}
