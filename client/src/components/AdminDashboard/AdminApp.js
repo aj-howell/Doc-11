@@ -1,6 +1,7 @@
 import AdminDashboard from './AdminDashboard';
 import './App.css';
 
+// Hello World
 function AdminApp() {
   return (
     <div className="App">
