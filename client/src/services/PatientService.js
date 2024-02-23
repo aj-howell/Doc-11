@@ -39,3 +39,18 @@ export const deletePatientById=async(id)=>
         console.log(err);
     }
 }
+
+// doesn't work
+/*
+export const createPatient = async (patientData) => {
+    //const patientData = {age, sex, zip, weight, bmi, icu_admits, icu_admit, exam_type_id, png_filename, mortality};
+    try
+    {
+    axios.post(`${uri}/patients/`, patientData);
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+*/

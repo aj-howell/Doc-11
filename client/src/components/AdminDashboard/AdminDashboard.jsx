@@ -1,4 +1,4 @@
-import PatientDrawer from "../Drawer/PatientDrawer";
+import CreateDrawer from "../Drawer/CreateDrawer"; // made a second one because changing patientdrawer changes update button as well
 import Navbar from "../Navbar/Navbar";
 import Table from '../Table/Table';
 
@@ -14,7 +14,7 @@ const AdminDashboard=()=>
             </div>
             <div> 
                 <Table/>
-              <PatientDrawer buttonTitle='create'/>
+              <CreateDrawer buttonTitle='create'/>
             </div>
         </>
     );
