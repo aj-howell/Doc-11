@@ -42,7 +42,7 @@ const getPatients = async (req, res) => {
 
 
 //The following HTTP Methods need be authenticated before being able to send
-const createPatient=(req,res)=>
+const createPatient=async(req,res)=>
 {
 
   const authHeader = req.headers['authorization'];
@@ -72,8 +72,8 @@ const createPatient=(req,res)=>
           return res.status(400).json({ error: "Required fields cannot be null or undefined." });
       }
       
-          patientModel.create({
-            patient_id: `COVID-19-AR-${uuidv4()}`,
+          await patientModel.create({
+          patient_id: `COVID-19-AR-${uuidv4()}`,
           age: reqBody.age,
           sex: reqBody.sex,
           zip: reqBody.zip,
@@ -87,11 +87,13 @@ const createPatient=(req,res)=>
           }).then(()=>
           {
             res.send("your request has been sent");
+            console.log('user created');
           })
           .catch(()=>
           {
             res.send("your request has not been sent");
           });
+          console.log('sent to the database');
     }
 }
 
@@ -135,11 +137,12 @@ const deletePatient=async(req,res)=>
 
 const updatePatient = async (req, res) => {
   const authHeader = req.headers['authorization'];
-  const validRequest = await auth(authHeader);
+  const validRequest = auth(authHeader); //doesn't need await because it should be returning a boolean
 
     if(validRequest==false)
     {
       res.status(500).send("This request is not authorized");
+      console.log("This request is not authorized");
     }
 
 

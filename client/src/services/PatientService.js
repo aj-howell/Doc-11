@@ -28,6 +28,33 @@ export const getPatients=async()=>
     }
 }
 
+
+export const createPatient=async(patientData)=>
+{
+    try
+    {
+        await axios.post(`${uri}/patients`, patientData);
+        console.log(patientData);
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+
+
+export const updatePatientById=async(id,patientData)=>
+{
+    try
+    {
+        await axios.put(`${uri}/patients/${id}`, patientData);
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+
 export const deletePatientById=async(id)=>
 {
     try

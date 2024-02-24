@@ -54,7 +54,7 @@ const PatientDetail = () => {
                     <div className="detail-item"><strong>Mortality:</strong> {patientDetails.mortality ? 'Yes' : 'No'}</div>
                     <div className="detail-item"><strong>ICU Admits:</strong> {patientDetails.icu_admits}</div>
                     <div className="detail-item"><strong>ICU Admit:</strong> {patientDetails.icu_admit ? 'Yes' : 'No'}</div>
-                   <PatientDrawer buttonTitle={'update'}/>
+                   <PatientDrawer buttonTitle={'update'} id={patientDetails.patient_id} patientData={patientDetails} fetchPatientDetails={fetchPatientDetails}/>
                     <button>delete</button>
                 </div>
             ) : (

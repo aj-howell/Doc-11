@@ -5,17 +5,17 @@ import { AgGridReact } from 'ag-grid-react'; // React Grid Logic
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { getPatients } from "../../services/PatientService";
+import PatientDrawer from "../Drawer/PatientDrawer";
 import './Table.css';
 
-    
-const Table = () => {
+const Table = ({TableType}) => {
 
     const [data, setData] = useState([]); 
     const [quickFilterText, setQuickFilterText] = useState('');
     const navigate = useNavigate(); // Initialize useNavigate
 
 
-    const getRows = async ()=>
+     const getRows = async ()=>
     {
         await getPatients()
         .then((res)=>
@@ -78,6 +78,8 @@ const Table = () => {
                 onRowClicked={onRowClicked}>
             </AgGridReact>
         </div>
+        {TableType==='Admin'? <PatientDrawer buttonTitle='create' getRows={getRows}/> : null}
+      
     </>
     );
 };
