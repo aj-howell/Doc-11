@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AdminApp from '../src/components/AdminDashboard/AdminApp';
+import ProtectedRoute from '../src/components/ProtectedRoute/ProtectedRoute';
 import App from './App';
 import Login from './components/Login/Login';
-import Register from './components/Register/Register';
 import PatientDetail from './components/PatientDetail/PatientDetail';
+import Register from './components/Register/Register';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/patient-detail/:id",
     element: <PatientDetail/>
+  },
+  {
+    path: "/Admin",
+    element: <ProtectedRoute component={<AdminApp />}/>
   }
 ]);
 

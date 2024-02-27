@@ -7,7 +7,7 @@ const login = async(req,res)=>
     userToken = {email: req.body.email, password: req.body.password}
 
     try {
-        const id = await auth(req.body.email, req.body.password);
+        const id = await auth(req.body.email, req.body.password); // we need the id before checking this condition
         
         if(id==-1)
         {
@@ -27,7 +27,6 @@ const login = async(req,res)=>
         console.log(error);
     }
 }
-
 
 module.exports=
 {

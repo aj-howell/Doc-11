@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from 'axios';
-import './Login.css';
+import { useNavigate } from "react-router-dom";
 import Auth from '../../services/AuthorizationService';
+import './Login.css';
 
 
 const Login=()=>
@@ -22,7 +21,7 @@ const Login=()=>
         console.log(response);
         
         //navigate to admin page
-        navigate('/');
+        navigate('/Admin');
     };
 
     return(

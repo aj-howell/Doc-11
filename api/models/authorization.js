@@ -25,11 +25,11 @@ const checkToken=async(header,res)=>
         const token = headerS.substring('Bearer '.length);
         
         try {
-        const decoded=jwt.verify(token, 'user');
+        const decoded= jwt.verify(token, 'user'); //in the future the secret will be more complex
         
         const emailExist = await User.exists({email:decoded.email})==null;
         
-        if(emailExist==true)
+        if(emailExist===true)
         {
             return false;
         }
