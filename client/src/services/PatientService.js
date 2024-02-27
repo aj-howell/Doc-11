@@ -33,7 +33,7 @@ export const createPatient=async(patientData)=>
 {
     try
     {
-        await axios.post(`${uri}/patients`, patientData);
+        await axios.post(`${uri}/patients`, patientData, getAuthConfig());
         console.log(patientData);
     }
     catch(err)
@@ -47,7 +47,7 @@ export const updatePatientById=async(id,patientData)=>
 {
     try
     {
-        await axios.put(`${uri}/patients/${id}`, patientData);
+        await axios.put(`${uri}/patients/${id}`, patientData, getAuthConfig());
     }
     catch(err)
     {
@@ -59,10 +59,16 @@ export const deletePatientById=async(id)=>
 {
     try
     {
-        await axios.delete(`${uri}/patients/${id}`);
+        await axios.delete(`${uri}/patients/${id}`, getAuthConfig());
     }
     catch(err)
     {
         console.log(err);
     }
 }
+
+export const getAuthConfig = ()=>
+({headers:
+{
+	Authorization: `Bearer ${localStorage.getItem("token")}`
+}});

@@ -68,3 +68,18 @@ a:hover {
         min-width: 100px;
     }
 }
+
+/* Style for the delete button */
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}

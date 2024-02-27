@@ -1,8 +1,7 @@
-import React from 'react';
-import './Register.css';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Auth from '../../services/AuthorizationService';
-import { useState } from "react";
+import './Register.css';
 
 const Register= () => {
     const navigate = useNavigate();
@@ -12,7 +11,6 @@ const Register= () => {
     const [password, setPassword] = useState('');
 
     const handleSubmit = async (e) => {
-        const userData = { username, email, password };
 
         e.preventDefault()
         const response = await Auth.register(username, email, password);

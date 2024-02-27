@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AdminApp from '../src/components/AdminDashboard/AdminApp';
+import ProtectedRoute from '../src/components/ProtectedRoute/ProtectedRoute';
 import App from './App';
-import AdminApp from './components/AdminDashboard/AdminApp';
 import Login from './components/Login/Login';
 import PatientDetail from './components/PatientDetail/PatientDetail';
 import Register from './components/Register/Register';
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Admin",
-    element: <AdminApp/>
+    element: <ProtectedRoute component={<AdminApp />}/>
   }
 ]);
 
