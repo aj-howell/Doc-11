@@ -22,15 +22,21 @@ const PatientDrawer =({buttonTitle, id, patientData, fetchPatientDetails, getRow
     const [zip, setZip] = useState(buttonTitle==='update'? `${patientData.zip}`:'');
     const [weight, setWeight] = useState(buttonTitle==='update'? `${patientData.weight}`:'');
     const [bmi, setBMI] = useState(buttonTitle==='update'? `${patientData.bmi}`:'');
-    const [icu_admit, set_icu_Admit] = useState(buttonTitle==='update'? `${patientData.icu_admit}`:'');
+    const [icu_admit, set_icu_Admit] = useState(buttonTitle==='update'? `${patientData.icu_admit}`:false);
     const [icu_admits, set_icu_Admits] = useState(buttonTitle==='update'? `${patientData.icu_admits}`:''); // in case no icu admits, default is 0
     const [exam_type_id, setExamType] = useState(buttonTitle==='update'? `${patientData.exam_type_id}`:'');
     const [png_filename, setFilename] = useState(buttonTitle==='update'? `${patientData.png_filename}`:''); // in case no patient img, default filename
-    const [mortality, setMortality] = useState(buttonTitle==='update'? `${patientData.mortality}`:'');
-
+    const [mortality, setMortality] = useState(buttonTitle==='update'? `${patientData.mortality}`:false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+                
+        // setSex(document.getElementById("sex").value);
+        // set_icu_Admit(document.getElementById("admitted").value);
+        // setMortality(document.getElementById("mortality").value);
+
+        const icuFlag = icu_admit === 'Yes' ? true:false; 
+        const  mortFlag = mortality === 'Yes' ? true:false;       
         
         const patientData = {
             age: parseInt(age),
@@ -39,10 +45,10 @@ const PatientDrawer =({buttonTitle, id, patientData, fetchPatientDetails, getRow
             weight: parseFloat(weight),
             bmi: parseFloat(bmi),
             icu_admits: parseInt(icu_admits),
-            icu_admit: (icu_admit === 'true'),
+            icu_admit: (icuFlag),
             exam_type_id: exam_type_id.toString(),
             png_filename: png_filename.toString(),
-            mortality: (mortality === 'true')
+            mortality: (mortFlag)
         };
         
         
@@ -88,9 +94,11 @@ const PatientDrawer =({buttonTitle, id, patientData, fetchPatientDetails, getRow
                         /> 
                     </div>
                     <div>Sex: 
-                        <input type="text" required={buttonTitle!=='update'}
-                        onChange={(e) => setSex(e.target.value)}
-                        /> 
+                        <select name="sex" id="sex" defaultValue="" required={buttonTitle!=='update'} onChange={(e) => setSex(e.target.value)}>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                     <div>Zip: 
                         <input type="text" required={buttonTitle!=='update'}
@@ -105,9 +113,11 @@ const PatientDrawer =({buttonTitle, id, patientData, fetchPatientDetails, getRow
                         onChange={(e) => setBMI(e.target.value)}/>
                     </div>
                     <div>The patient has been admitted to the ICU?: 
-                        <input type="text" required={buttonTitle!=='update'}
-                        onChange={(e) => set_icu_Admit(e.target.value)}
-                        /> 
+                        <select name="admitted" id="admitted" defaultValue="" required={buttonTitle!=='update'} onChange={(e) => set_icu_Admit(e.target.value)}>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                     </div>
                     <div>If so, how many times?: 
                         <input type="text"
@@ -124,9 +134,11 @@ const PatientDrawer =({buttonTitle, id, patientData, fetchPatientDetails, getRow
                         />
                     </div>
                     <div>Mortality: 
-                        <input type="text" required={buttonTitle!=='update'}
-                        onChange={(e) => setMortality(e.target.value)}
-                        />
+                        <select name="mortality" id="mortality" defaultValue="" required={buttonTitle!=='update'} onChange={(e) => setMortality(e.target.value)}>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                     </div>
                     <button type="submit">Submit</button>
                 </form>

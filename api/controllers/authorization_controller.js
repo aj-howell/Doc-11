@@ -16,7 +16,8 @@ const login = async(req,res)=>
         
         else
         {
-            const token = jwt.sign({email: req.body.email}, 'user', { expiresIn: '1h' }); // issue token
+            //900000 15 min
+            const token = jwt.sign({email: req.body.email}, 'user', { expiresIn: '900000' }); // issue token
             const authResponse = {token:token, id:id} //creating the response
             
             res.setHeader('Authorization', `Bearer ${token}`); //set the header so we can make the request later
