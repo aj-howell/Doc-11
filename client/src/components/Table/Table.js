@@ -40,7 +40,6 @@ const Table = ({TableType}) => {
         { headerName: "Exam ID", field: "exam_type_id", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Age", field: "age", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Sex", field: "sex", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
-        { headerName: "Image", field: "png_filename", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Weight", field: "weight", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "BMI", field: "bmi", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },
         { headerName: "Zip Code", field: "zip", sortable: true, filter: 'agTextColumnFilter', lockVisible:true, resizable:true },

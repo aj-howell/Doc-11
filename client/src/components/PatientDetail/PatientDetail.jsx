@@ -14,7 +14,8 @@ const PatientDetail = () => {
     useEffect(() => {
         fetchPatientDetails(id);
     }, [id]);
-// Include token in the dependency array
+
+    // Include token in the dependency array
 
     // const fetchPatientDetails = async (id) => {
     //     try {
